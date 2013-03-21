@@ -1,0 +1,10 @@
+ro.sys.atvc_allow_netmon_usb=0
+ro.sys.atvc_allow_netmon_ih=0
+ro.sys.atvc_allow_res_core=0
+ro.sys.atvc_allow_res_panic=0
+ro.sys.atvc_allow_all_adb=1
+ro.sys.atvc_allow_all_core=0
+ro.sys.atvc_allow_efem=0
+ro.sys.atvc_allow_bp_log=0
+ro.sys.atvc_allow_ap_mot_log=0
+ro.sys.atvc_allow_gki_log=0

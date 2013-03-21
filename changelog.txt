@@ -1,0 +1,5 @@
+v2
+* add exploit preinstalameEsta
+* add the possibility of "push any key" pressing enter or space (with focus on the screen)
+* add the possibility of halt the execution pressing ctrl+c (with focus on the screen)
+* re writen some parts of code/whatever
