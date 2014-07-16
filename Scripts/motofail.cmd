@@ -1,6 +1,6 @@
 @echo off
 echo [*]Waiting for device
-ADB\adb.exe.exe wait-for-device
+ADB\adb.exe wait-for-device
 echo [*]Device found.
 echo [*]Deploying payload...
 ADB\adb.exe push Exploits\motofail /data/local/motofail
