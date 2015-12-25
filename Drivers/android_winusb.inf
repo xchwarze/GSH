@@ -6,15 +6,10 @@ Signature           = "$Windows NT$"
 Class               = AndroidUsbDeviceClass
 ClassGuid           = {3F966BD9-FA04-4ec5-991C-D326973B5128}
 Provider            = %ProviderName%
-DriverVer           = 12/06/2010,4.0.0000.00000
+DriverVer           = 08/28/2014,11.0.0000.00000
 CatalogFile.NTx86   = androidwinusb86.cat
 CatalogFile.NTamd64 = androidwinusba64.cat
 
-;
-; This section seems to be required for WinUsb driver installation.
-; If this section is removed the installer will report an error
-; "Required section not found in INF file".
-;
 [ClassInstall32]
 Addreg = AndroidWinUsbClassReg
 
@@ -22,56 +17,93 @@ Addreg = AndroidWinUsbClassReg
 HKR,,,0,%ClassName%
 HKR,,Icon,,-1
 
+
 [Manufacturer]
 %ProviderName% = Google, NTx86, NTamd64
 
+
 [Google.NTx86]
-; HTC Dream
-%SingleAdbInterface%        = USB_Install, USB\VID_0BB4&PID_0C01
-%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_0C02&MI_01
-%SingleBootLoaderInterface% = USB_Install, USB\VID_0BB4&PID_0FFF
-; HTC Magic
-%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_0C03&MI_01
-;
-;Moto Sholes
-%SingleAdbInterface%        = USB_Install, USB\VID_22B8&PID_41DB
-%CompositeAdbInterface%     = USB_Install, USB\VID_22B8&PID_41DB&MI_01
-;
-;Google NexusOne
+
+;Google Nexus One
 %SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_0D02
 %CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_0D02&MI_01
 %SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_4E11
 %CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E12&MI_01
+
+;Google Nexus S
+%SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_4E21
 %CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E22&MI_01
+%SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_4E23
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E24&MI_01
 
-;Kindle Fire
-%SingleAdbInterface%        = USB_Install, USB\VID_1949&PID_0006
-%CompositeAdbInterface%     = USB_Install, USB\VID_1949&PID_0006&MI_01
+;Google Nexus 7
+%SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_4E40
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E42&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E44&MI_01
 
+;Google Nexus Q
+%SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_2C10
+%SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_2C11
+
+;Google Nexus (generic)
+%SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_4EE0
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4EE2&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4EE4&MI_02
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4EE6&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4EE7
+
+;Google Glass
+%SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_9001
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_9001&MI_01
+
+;Project Tango (generic)
+%SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_4D00
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4D02&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4D04&MI_02
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4D06&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4D07
 
 
 [Google.NTamd64]
-; HTC Dream
-%SingleAdbInterface%        = USB_Install, USB\VID_0BB4&PID_0C01
-%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_0C02&MI_01
-%SingleBootLoaderInterface% = USB_Install, USB\VID_0BB4&PID_0FFF
-; HTC Magic
-%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_0C03&MI_01
-;
-;Moto Sholes
-%SingleAdbInterface%        = USB_Install, USB\VID_22B8&PID_41DB
-%CompositeAdbInterface%     = USB_Install, USB\VID_22B8&PID_41DB&MI_01
-;
-;Google NexusOne
+
+;Google Nexus One
 %SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_0D02
 %CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_0D02&MI_01
 %SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_4E11
 %CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E12&MI_01
-%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E22&MI_01
 
-;Kindle Fire
-%SingleAdbInterface%        = USB_Install, USB\VID_1949&PID_0006
-%CompositeAdbInterface%     = USB_Install, USB\VID_1949&PID_0006&MI_01
+;Google Nexus S
+%SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_4E21
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E22&MI_01
+%SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_4E23
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E24&MI_01
+
+;Google Nexus 7
+%SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_4E40
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E42&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E44&MI_01
+
+;Google Nexus Q
+%SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_2C10
+%SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_2C11
+
+;Google Nexus (generic)
+%SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_4EE0
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4EE2&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4EE4&MI_02
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4EE6&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4EE7
+
+;Google Glass
+%SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_9001
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_9001&MI_01
+
+;Project Tango (generic)
+%SingleBootLoaderInterface% = USB_Install, USB\VID_18D1&PID_4D00
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4D02&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4D04&MI_02
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4D06&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4D07
 
 
 [USB_Install]
@@ -134,4 +166,4 @@ CompositeAdbInterface       = "Android Composite ADB Interface"
 SingleBootLoaderInterface   = "Android Bootloader Interface"
 WinUSB_SvcDesc              = "Android USB Driver"
 DISK_NAME                   = "Android WinUsb installation disk"
-ClassName                   = "Android Phone"
+ClassName                   = "Android Device"
